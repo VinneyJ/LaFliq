@@ -3,6 +3,10 @@
 # Edit at https://www.toptal.com/developers/gitignore?templates=python,linux,macos,visualstudio,visualstudiocode,django
 
 ### Django ###
+virtual/
+.env/
+pycache/
+vscode/__pycache__ 
 *.log
 *.pot
 *.pyc
