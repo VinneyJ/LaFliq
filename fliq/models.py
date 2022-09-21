@@ -1,14 +1,21 @@
 from django.db import models
 from django.contrib.auth.models import User
 
-# Create your models here.
+#define category choices
+CATEGORY_CHOICES = (
+    ('S', 'Shirts'),
+    ('H', 'Hoodies'),
+    ('SW', 'Sweatpant')
 
+)
+# Create your models here.
 class Item(models.Model):
     title = models.CharField(max_length=200)
     price = models.IntegerField()
-    description = models.CharField(max_length=200)
-    discount_price = models.IntegerField()
+    description = models.TextField(max_length=200,null=True,blank=True)
+    discount_price = models.IntegerField(blank=True, null=True)
     slug = models.SlugField()
+    category = models.CharField(choices=CATEGORY_CHOICES, max_length=200,default="p")
 
     def __str__(self):
         return self.title
