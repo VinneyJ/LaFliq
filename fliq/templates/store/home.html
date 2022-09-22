@@ -7,6 +7,8 @@
             <h2>Products</h2>
         </div>
         <div class="row">
+            {% for item in items %}
+            <!--start products div -->
             <div class="col-lg-3">
             <div class="product-box">
                 <div class="product-inner-box position-relative">
@@ -23,65 +25,16 @@
                 </div>
                 <div class="product-info">
                     <div class="product-name">
-                        <h4>Plain Hoodie - Black</h4>
+                        <h4>{{item.title}}</h4>
                     </div>
                     <div class="product-price"> 
-                        Ksh<span>1900</span>
+                        Ksh<span>{{item.price}}</span>
                     </div>
                 </div>
             </div>
             </div>
-<!-- product box 2 -->
-            <div class="col-lg-3">
-            <div class="product-box">
-                <div class="product-inner-box position-relative">
-                    <div class="icons position-absolute">
-                        <a href="#" class="text-decoration-none text-dark"><i class="fa-solid fa-heart"></i></a>
-                    </div>
-                    <div class="onsale">
-                        <span class="badge rounded-0 text-light"><i class="fa-solid fa-tag"></i> 10%</span>
-                    </div>
-                    <img src="/static/images/Solid Color Cotton Fleece Soft Feel Hoodies.jpeg" alt="White Hoodie" class="img-fluid">
-                    <div class="cart-btn">
-                        <a href="{% url 'cart' %}" class="btn btn-light"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Add to cart</a>
-                    </div>
-                </div>
-                <div class="product-info">
-                    <div class="product-name">
-                        <h4>Plain Hoodie - White</h4>
-                    </div>
-                    <div class="product-price"> 
-                        Ksh<span>1800</span>
-                    </div>
-
-                </div>
-            </div>
-            </div>
-<!-- product-box 3 -->
-            <div class="col-lg-3">
-            <div class="product-box">
-                <div class="product-inner-box position-relative">
-                    <div class="icons position-absolute">
-                        <a href="#" class="text-decoration-none text-dark"><i class="fa-solid fa-heart"></i></a>
-                    </div>
-                    <div class="onsale">
-                        <span class="badge rounded-0 text-light"><i class="fa-solid fa-tag"></i> 15%</span>
-                    </div>
-                    <img src="/static/images/Plain Black Pullover Hoodies Fleece Cotton Hoody.jpeg" alt="Black Hoodie" class="img-fluid">
-                    <div class="cart-btn">
-                        <a href="{% url 'cart' %}" class="btn btn-light"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Add to cart</a>
-                    </div>
-                </div>
-                <div class="product-info">
-                    <div class="product-name">
-                        <h4>Plain Hoodie - Black</h4>
-                    </div>
-                    <div class="product-price"> 
-                        Ksh<span>1900</span>
-                    </div>
-                </div>
-            </div>
-            </div>
+            {% endfor %}
+            <!--end products div -->
         </div>
     </div>
 

@@ -1,12 +1,11 @@
 from django.shortcuts import render
-
-#Create Class-based views
-from django.views.generic import ListView,DetailView
-from .models import Customer, Item, Order, OrderItem
+from .models import *
 
 # Create your views here.
 def home(request):
-    return render(request, 'store/home.html')
+    items = Item.objects.all()
+    context = {'items':items}
+    return render(request, 'store/home.html', context)
 
 def cart(request):
     return render(request, 'store/cart.html')
