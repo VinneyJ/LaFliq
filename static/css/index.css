@@ -8,11 +8,15 @@ body {
     color: #395B64;
     margin-top: 5rem;
   }
-  /* h1, h2, h3, h4, h5, h6 {
-    color: #2C3333;
-  } */
+  h1, h2, h3, h4, h5, h6 {
+    color: #072227;
+  }
+nav{
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,.2);
+}
 header .navbar-nav .nav-link {
     color: #072227;
+    
   }
   
 header .navbar-nav .nav-link:hover {
@@ -44,7 +48,7 @@ header .navbar-nav .nav-link.active {
     font-size: 18px;
     color: #fff;
     text-transform: capitalize;
-    margin-bottom: 30px;
+    margin-bottom: 25px;
     font-weight: 500;
     position: relative;
 }
@@ -90,4 +94,75 @@ header .navbar-nav .nav-link.active {
 .footer-col .social-links a:hover{
     color: #E4DCCF;
     background-color:#072227;
+}
+
+/* homepage */
+
+.product-inner-box .icons{
+    right: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    top: -3%;
+    transition: all 0.2s ease-in-out, transform 0.12s ease-in-out, opacity 0.2s ease-in-out;
+}
+.product-inner-box .icons a {
+    width: 40px;
+    height: 40px;
+    margin-top: 5px;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    border-radius: 50%;
+}
+.product-inner-box .onsale .badge {
+    background: #072227;
+    font-size: 12px;
+    padding: 5px 14px;
+    top: 0px;
+    position: absolute;
+}
+.product-inner-box .onsale .badge::before {
+    border-width: 10px 0px 0px 10px;
+    border-color: transparent transparent transparent #072227;
+    content: '';
+    position: absolute;
+    right: -8px;
+    width: 0;
+    bottom: 0;
+    border-style: solid;
+}
+.product-inner-box .onsale .badge::after {
+    border-width: 10px 10px 0px 10px;
+    border-color: #072227 transparent transparent transparent;
+    content: '';
+    position: absolute;
+    right: -8px;
+    width: 0;
+    top: 0px;
+    border-style: solid;
+}
+.product-inner-box img{
+    box-shadow: 0px 33px 61px -29px #072227;
+    height: 380px;
+    width: 100%;
+    object-fit: cover;
+}
+.product-box:hover{
+    transition: .3s ;
+    transform: scale(1.05);
+    top:3%;
+    opacity:1;
+}
+.cart-btn{
+    position:absolute;
+    bottom: 15px;
+    padding: 10px;
+    text-align:center;
+    border-radius: 50%;
+    width: 100%;
+}
+.product-name h3{
+    font-size: 16px;
+    font-weight: 400;
 }
