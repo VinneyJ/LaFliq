@@ -22,6 +22,7 @@ class Item(models.Model):
     price = models.IntegerField()
     description = models.TextField(max_length=200,null=True,blank=True)
     discount_price = models.IntegerField(blank=True, null=True)
+    image = models.ImageField(null=True,blank=True)
     slug = models.SlugField()
     category = models.CharField(choices=CATEGORY_CHOICES, max_length=200,default="p")
 
