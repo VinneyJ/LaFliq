@@ -9,6 +9,14 @@ CATEGORY_CHOICES = (
 
 )
 # Create your models here.
+class Customer(models.Model):
+    user = models.OneToOneField(User,on_delete=models.CASCADE, null=True,blank=True)
+    name = models.CharField(max_length=200,null=True)
+    email = models.CharField(max_length=200,null=True)
+
+    def __str__(self):
+        return self.name
+
 class Item(models.Model):
     title = models.CharField(max_length=200)
     price = models.IntegerField()
@@ -30,7 +38,7 @@ class OrderItem(models.Model):
         return f"{self.quantity} of {self.item.title}"
 
 class Order(models.Model):
-    user = models.ForeignKey(User,on_delete=models.CASCADE)
+    user = models.ForeignKey(Customer,on_delete=models.CASCADE)
     items = models.ManyToManyField(OrderItem)
     ordered = models.BooleanField(default=False)
     start_date = models.DateTimeField(auto_now_add=True)
@@ -38,3 +46,14 @@ class Order(models.Model):
 
     def __str__(self):
         return self.user.username
+
+class ShippingAddress(models.Model):
+    user = models.ForeignKey(Customer, on_delete=models.SET_NULL,null=True,blank=True)
+    address = models.CharField(max_length=200,null=True)
+    city = models.CharField(max_length=200,null=True)
+    state = models.CharField(max_length=200,null=True)
+    zipcode = models.CharField(max_length=200,null=True)
+    date_added = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.address

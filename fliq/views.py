@@ -2,12 +2,7 @@ from django.shortcuts import render
 
 #Create Class-based views
 from django.views.generic import ListView,DetailView
-from .models import Item, Order, OrderItem
-
-class HomeView(ListView):
-    model = Item
-    template_name = 'home.html'
-
+from .models import Customer, Item, Order, OrderItem
 
 # Create your views here.
 def home(request):
