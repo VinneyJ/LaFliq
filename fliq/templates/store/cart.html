@@ -3,32 +3,79 @@
 
 {% block content %}
 <div class="container">
-    <section id="cart">
-        <table width="50%">
-            <thead>
-                <tr>
-                    <td>Remove</td>
-                    <td>Image</td>
-                    <td>Product</td>
-                    <td>Price</td>
-                    <td>Quantity</td>
-                    <td>Total</td>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><a href="#"></a><i class="fa-solid fa-trash-can"></i></td>
-                    <td><img src="/static/images/_.jpeg" alt=""></td>
-                    <td>Plain Hoodie</td>
-                    <td>Ksh.1800</td>
-                    <td><input type="number" value="1"></td>
-                    <td>Ksh.1800</td>
-                </tr>
-            </tbody>
-        </table>
-        <br>
-        <br>
-    </section>
+    <div class="row">
+        <div class="col-sm-8">
+        <section class="left-col" id="cart">
+            <table>
+                <thead>
+                    <tr>
+                        <td>Remove</td>
+                        <td>Image</td>
+                        <td>Product</td>
+                        <td>Price</td>
+                        <td>Quantity</td>
+                        <td>Total</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><a href="#"></a><i class="fa-solid fa-trash-can"></i></td>
+                        <td><img src="/static/images/_.jpeg" alt=""></td>
+                        <td>Plain Hoodie</td>
+                        <td>Ksh.1800</td>
+                        <td><input type="number" value="1"></td>
+                        <td>Ksh.1800</td>
+                    </tr>
+                    <tr>
+                        <td><a href="#"></a><i class="fa-solid fa-trash-can"></i></td>
+                        <td><img src="/static/images/_.jpeg" alt=""></td>
+                        <td>Plain Hoodie</td>
+                        <td>Ksh.1800</td>
+                        <td><input type="number" value="1"></td>
+                        <td>Ksh.1800</td>
+                    </tr>
+                    <tr>
+                        <td><a href="#"></a><i class="fa-solid fa-trash-can"></i></td>
+                        <td><img src="/static/images/_.jpeg" alt=""></td>
+                        <td>Plain Hoodie</td>
+                        <td>Ksh.1800</td>
+                        <td><input type="number" value="1"></td>
+                        <td>Ksh.1800</td>
+                    </tr>
+                </tbody>
+            </table>
+            <br>
+            <br>
+        </section>
+        </div>
+        <div class="col-sm-4">
+            <section class="right-col">
+                <div class="total-price">
+                    <table>
+                        <tr>
+                            <td>Subtotal</td>
+                            <td>Ksh.3000</td>
+                        </tr>
+                        <tr>
+                            <td>Tax</td>
+                            <td>35.00</td>
+                        </tr>
+                        <tr>
+                            <td>Total</td>
+                            <td>Ksh.3350</td>
+                        </tr>
+                    </table>
+                </div>
+                
+                    <a href="{% url 'checkout' %}" class="btn checkout-btn">Checkout</a>
+                <div class="pay">
+                    <img src="/static/images/Mpesa.png">
+                    <img src="/static/images/pay.jpg">
+                    <img src="/static/images/Visa.png">
+                </div>
+            </section>
+        </div>
+    </div>
 </div>
  
 {% endblock content %}
