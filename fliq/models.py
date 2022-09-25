@@ -11,11 +11,11 @@ CATEGORY_CHOICES = (
 # Create your models here.
 class Customer(models.Model):
     user = models.OneToOneField(User,on_delete=models.CASCADE, null=True,blank=True)
-    name = models.CharField(max_length=200,null=True)
+    username = models.CharField(max_length=200,null=True)
     email = models.CharField(max_length=200,null=True)
 
     def __str__(self):
-        return self.name
+        return self.username
 
 class Item(models.Model):
     title = models.CharField(max_length=200)
