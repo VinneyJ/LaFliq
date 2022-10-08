@@ -2,5 +2,32 @@
 {% load static %}
 
 {% block content %}
+
+<div class="content-section login">
+    <div class="row mt-5">
+        <div class="col">
+            <div>
+                <fieldset class="form-group">
+                    <legend class="paymentheader border-bottom mb-4 text-center">Payment Information</legend>
+                    <div class="form-group mb-4 row d-flex justify-content-center">
+                        <label for="exampleInputName" class="form-label text-center">Your fullname</label>
+                        <input class="form-control" id="exampleInputName" placeholder=" Enter your full name" required style="width: 20rem; padding: 10px;">
+                    </div>
+                    <div class="form-group mb-4 row d-flex justify-content-center">
+                        <label for="exampleInputContact" class="form-label text-center" >Your Phone Number</label>
+                        <input class="form-control" id="exampleInputContact" [(ngModel)]="phone" placeholder="+254" required style="width: 20rem; padding: 10px;">
+                    </div>
+                    <div class="text-center button">
+                      <button type="button" (click)="OnClick()" class="btn btn-primary button">Pay Order</button>
+                    </div>
+                    <div class="text-center button">
+                      <button routerLink="" class="btn btn-success button mt-5 ml-5">Checkout</button>
+                    </div>
+                </fieldset>
+              </div>
+        </div>
+        </div>
+           
+    </div>
    
 {% endblock content %}
