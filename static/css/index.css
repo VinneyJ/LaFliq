@@ -256,7 +256,6 @@ th:last-child {
     font-size:1.25rem;
     position: relative;
     margin: 32px;
-
     background-color:#072227;
     color:white;
     border-radius: 50px;
@@ -269,5 +268,5 @@ th:last-child {
     text-align: center;
     line-height: 60px;
     transition: all 0.5s ease;
-
 }
+

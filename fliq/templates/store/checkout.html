@@ -18,10 +18,10 @@
                         <input class="form-control" id="exampleInputContact" [(ngModel)]="phone" placeholder="+254" required style="width: 20rem; padding: 10px;">
                     </div>
                     <div class="text-center button">
-                      <button type="button" (click)="OnClick()" class="btn btn-primary button">Pay Order</button>
+                      <button type="button" (click)="OnClick()" class="btn" style="background-color:#072227;padding: 20px 40px;color:white;margin: 10px;border-radius: 50px;">Pay Order</button>
                     </div>
                     <div class="text-center button">
-                      <button routerLink="" class="btn btn-success button mt-5 ml-5">Checkout</button>
+                     <a href="{% url 'checkout' %}" class="btn" style="background-color:#072227;padding: 20px 40px;color:white;margin: 32px;border-radius: 50px;">Checkout</a>
                     </div>
                 </fieldset>
               </div>

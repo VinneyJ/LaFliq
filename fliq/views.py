@@ -8,8 +8,8 @@ def home(request):
     return render(request, 'store/home.html', context)
 
 def cart(request):
-    context = {'items':items} 
-    return render(request, 'store/cart.html', context)
+   
+    return render(request, 'store/cart.html', )
 
 def checkout(request):
     return render(request, 'store/checkout.html')
