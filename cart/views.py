@@ -33,6 +33,7 @@ def add_to_cart(request, id_unique):
 
     user_cart, created = Cart.objects.get_or_create(user=user_instance, ordered=False)
     user_cart.items.add(cart_item)
+    user_cart.save()
 
     messages.info(request, "Item added to cart")
     return redirect(reverse('products:product-list'))
