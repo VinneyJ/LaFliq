@@ -19,7 +19,7 @@ class Customer(models.Model):
 
 class Item(models.Model):
     title = models.CharField(max_length=200)
-    price = models.IntegerField()
+    price = models.FloatField()
     description = models.TextField(max_length=200,null=True,blank=True)
     discount_price = models.IntegerField(blank=True, null=True)
     image = models.ImageField(null=True,blank=True)
