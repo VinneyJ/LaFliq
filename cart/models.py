@@ -2,7 +2,6 @@ from django.db import models
 from django.contrib.auth.models import User
 from datetime import datetime
 from fliq.models import Customer, Item
-# Create your models here.
 
 
 
@@ -13,10 +12,20 @@ class CartItem(models.Model):
     quantity = models.IntegerField(default=1)
     created_at = models.DateTimeField(default=datetime.now)
 
+
+    def increment_quantity(self):
+        self.quantity += 1
+
     @property
     def price_VAT_inclusive(self):
         VAT_TAX = 16.0
-        return self.item.price * (100 + VAT_TAX)/100.00
+        if self.quantity > 1:
+            tot_price = self.item.price * (100 + VAT_TAX)/100.00
+            return tot_price * self.quantity
+        else:
+            return self.item.price * (100 + VAT_TAX)/100.00
+
+        
 
     def __str__(self):
         return self.item.title
