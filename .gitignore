@@ -2,9 +2,12 @@
 # Created by https://www.toptal.com/developers/gitignore/api/python,linux,macos,visualstudio,visualstudiocode,django
 # Edit at https://www.toptal.com/developers/gitignore?templates=python,linux,macos,visualstudio,visualstudiocode,django
 
-.vscode
+
 ### Django ###
 virtual/
+*.sqlite3
+venv/
+
 .env/
 pycache/
 .vscode/
