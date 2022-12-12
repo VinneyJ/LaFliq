@@ -30,7 +30,9 @@ def add_to_cart(request, id_unique):
         cart_item.increment_quantity()
         cart_item.save()
         messages.info(request, 'Item quantity has been updated')
-
+    else:
+        messages.info(request, 'Sorry, there was a problem updating the item quantity')
+        return redirect(reverse('shopping_cart:order_summary'))
     user_cart, created = Cart.objects.get_or_create(user=user_instance, ordered=False)
     user_cart.items.add(cart_item)
     user_cart.save()
