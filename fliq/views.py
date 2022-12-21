@@ -1,7 +1,9 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .models import *
 
 # Create your views here.
+
+
 def home(request):
     items = Item.objects.all()
     context = {'items':items}

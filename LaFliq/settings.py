@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'fliq',
     'cart',
     'storages',
+    
 ]
 
 MIDDLEWARE = [
