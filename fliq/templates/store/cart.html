@@ -6,10 +6,11 @@
     <div class="row">
         <div class="col-sm-8">
 
-            {% for item in items %}
+            
         <section class="left-col" id="cart">
             <table>
                 <thead>
+                    {% for item in items %}
                     <tr>
                         <td>Remove</td>
                         <td>Image</td>
@@ -21,19 +22,20 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td><a href="#"></a><i class="fa-solid fa-trash-can"></i></td>
+                        <td><a href="{% url 'shopping_cart:remove_from_cart' item.id %}"></a><i class="fa-solid fa-trash-can"></i></td>
                         <td><img src="/static/images/_.jpeg" alt=""></td>
-                        <td>Plain Hoodie</td>
-                        <td>Ksh.1800</td>
-                        <td><input type="number" value="1"></td>
-                        <td>Ksh.1800</td>
+                        <td>{{ item.item.title }}</td>
+                        <td>Ksh.{{ item.item.price }}</td>
+                        <td><input type="number" value="{{ item.quantity }}"></td>
+                        <td>Ksh.{{ item.price_VAT_inclusive }}</td>
                     </tr>
+                    {% endfor %}
                 </tbody>
             </table>
             <br>
             <br>
         </section>
-            {% endfor %}
+            
         </div>
         <div class="col-sm-4">
             <section class="right-col">
@@ -41,15 +43,15 @@
                     <table>
                         <tr>
                             <td>Subtotal</td>
-                            <td>Ksh.3000</td>
+                            <td>Ksh.{{ subtotal }}</td>
                         </tr>
                         <tr>
                             <td>Tax</td>
-                            <td>35.00</td>
+                            <td>{{ tax }}</td>
                         </tr>
                         <tr>
                             <td>Total</td>
-                            <td>Ksh.3350</td>
+                            <td>Ksh.{{ total }}</td>
                         </tr>
                     </table>
                 </div>

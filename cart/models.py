@@ -5,8 +5,6 @@ from fliq.models import Customer, Item
 
 
 
-
-
 class CartItem(models.Model):
     item = models.OneToOneField(Item, on_delete=models.SET_NULL, null=True)
     quantity = models.IntegerField(default=1)

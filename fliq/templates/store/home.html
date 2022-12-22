@@ -19,9 +19,12 @@
                         <span class="badge rounded-0 text-light"><i class="fa-solid fa-tag"></i> 15%</span>
                     </div>
                     <img src="{{item.image.url}}" alt="" class="img-fluid">
-                    <div class="cart-btn">
-                        <a href="{% url 'cart' %}" class="btn btn-light"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Add to cart</a>
-                    </div>
+                        
+                    
+                    <!-- <div class="cart-btn">
+                        <a href="#" onclick="add_to_cart({{ item_id }})" class="btn btn-light"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Add to cart</a>
+                    </div> -->
+
                 </div>
                 <div class="product-info">
                     <div class="product-name">
@@ -39,3 +42,25 @@
     </div>
 
 {% endblock content %}
+<script>
+        
+    function add_to_cart(item_id) {
+        $.ajax({
+          url: '/cart/add-to-cart/' + item_id + '/',
+          type: 'POST',
+          dataType: 'json',
+          success: function(response) {
+            // Update the cart count and total in the header
+            $('#cart-count').text(response.cart_count);
+            $('#cart-total').text(response.cart_total);
+            
+            // Display a success message
+            alert('Item added to cart');
+          },
+          error: function(xhr, status, error) {
+            // Display an error message
+            alert('There was a problem adding the item to the cart');
+          }
+        });
+      }
+    </script>

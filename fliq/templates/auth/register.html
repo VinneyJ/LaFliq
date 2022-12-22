@@ -2,11 +2,16 @@
 {% load static %}
 
 {% block content %}
+
 <div class="container mb-3">
     <form class="form-control mb-3" method="post">
         {% csrf_token %}
         {{ form.as_p }}
-        <button type="submit">Login</button>
+        <button type="submit" class="btn">Register</button>
     </form>
 </div>
+
+{% endblock content %}
+
+
 

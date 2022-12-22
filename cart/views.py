@@ -41,9 +41,6 @@ def add_to_cart(request, id_unique):
     return redirect(reverse('products:product-list'))
 
 
-
-        
-
 def remove_from_cart(request, unique_id):
     """
     1. Get the cart item instance
